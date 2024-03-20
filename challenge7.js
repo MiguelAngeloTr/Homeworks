@@ -6,6 +6,7 @@ class Graph {
     addNode(node){
         this.nodes.push(node)
         this.adjList[node]=[]
+        console.log(this.nodes)
     }
     addEdge(node1,node2){
         this.adjList[node1].push(node2);
@@ -34,12 +35,18 @@ class Graph {
 
 
 
-persona = {
+let graph = new Graph();
+
+let persona = {
     name: 'miguel',
-    age: 20,
-    city: {name:"bogota"}
+    age: 20
+}
+let ciudad ={
+    name:"bogota"
 }
 
-addNode(persona);
-addEdge(persona, "juan");
-printGraph(persona)
+
+graph.addNode(persona);
+graph.addNode(ciudad);
+graph.addEdge(persona, ciudad);
+graph.printGraph();
